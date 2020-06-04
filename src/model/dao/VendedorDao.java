@@ -8,7 +8,7 @@ public interface VendedorDao {
 	
 	void insert(Vendedor obj);
 	void update(Vendedor obj);
-	void deleteById(Vendedor id);
-	Vendedor findById(Vendedor id);
+	void deleteById(Integer id);
+	Vendedor findById(Integer id);
 	List<Vendedor> findAll();
 }
