@@ -103,7 +103,7 @@ public class Vendedor implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Vendedor [id=" + id + ", nome=" + nome + ", email=" + email + ", dataNasc=" + dataNasc
-				+ ", salarioBase=" + salarioBase + ", departamento=" + departamento + "]";
+		return "Vendedor [id = " + id + ", nome = " + nome + ", email = " + email + ", dataNasc = " + dataNasc
+				+ ", salarioBase = " + salarioBase + ", departamento = " + departamento + "]";
 	}	
 }
