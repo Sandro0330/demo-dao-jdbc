@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.VendedorDao;
+import model.dao.impl.VandedorDaoJdbc;
 import model.entities.Departamento;
 import model.entities.Vendedor;
 
@@ -15,8 +16,8 @@ public class Programa {
 		VendedorDao vendedorDao = DaoFactory.createVendedorDao();
 		
 		System.out.println("=== Teste N°1: vandedor findById ===");
-		Vendedor seller = vendedorDao.findById(3);
-		System.out.println(seller);
+		Vendedor vendedor = vendedorDao.findById(3);
+		System.out.println(vendedor);
 		
 		System.out.println("\n=== Teste N°2: vandedor findByIDepartment ===");
 		Departamento departamento = new Departamento(2, null);
@@ -35,6 +36,13 @@ public class Programa {
 		Vendedor newVendedor = new Vendedor(null, "Sandro", "sandro@hotmail.com", new Date(), 4000.0, departamento);
 		vendedorDao.insert(newVendedor);
 		System.out.println("Inserido! Novo id = " + newVendedor.getId() );
+		
+		
+		System.out.println("\n=== Teste N°5: vandedor update ===");
+		vendedor = vendedorDao.findById(8);
+		vendedor.setNome("Maria Silva");
+		vendedorDao.update(vendedor);
+		System.out.println("Atualização Completa");
 		
 	}
 
