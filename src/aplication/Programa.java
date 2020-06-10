@@ -1,5 +1,6 @@
 package aplication;
 
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -17,18 +18,23 @@ public class Programa {
 		Vendedor seller = vendedorDao.findById(3);
 		System.out.println(seller);
 		
-		System.out.println("\n=== Teste N°2: vandedor findByIDepartment===");
+		System.out.println("\n=== Teste N°2: vandedor findByIDepartment ===");
 		Departamento departamento = new Departamento(2, null);
 		List<Vendedor> lista = vendedorDao.findByDepartament(departamento);
 		for (Vendedor obj : lista) {
 			System.out.println(obj);	
 		}
 		
-		System.out.println("\n=== Teste N°3: vandedor findAll===");		
+		System.out.println("\n=== Teste N°3: vandedor findAll ===");		
 		lista = vendedorDao.findAll();
 		for (Vendedor obj : lista) {
 			System.out.println(obj);	
 		}	
+		
+		System.out.println("\n=== Teste N°4: vandedor insert ===");
+		Vendedor newVendedor = new Vendedor(null, "Sandro", "sandro@hotmail.com", new Date(), 4000.0, departamento);
+		vendedorDao.insert(newVendedor);
+		System.out.println("Inserido! Novo id = " + newVendedor.getId() );
 		
 	}
 
